@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+             xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="ArcTouch.Views.PopUp.LanguagePopUpPage">
+
+
+    <pages:PopupPage.Animation>
+        <animations:ScaleAnimation 
+            PositionIn="Center"
+            PositionOut="Center"
+            ScaleIn="1.2"
+            ScaleOut="0.8"
+            DurationIn="400"
+            DurationOut="300"
+            EasingIn="SinOut"
+            EasingOut="SinIn"
+            HasBackgroundAnimation="True"/>
+    </pages:PopupPage.Animation>
+
+    <ScrollView HorizontalOptions="Center" VerticalOptions="Center">
+        <AbsoluteLayout>
+            <Grid x:Name="MainGrid">
+                <Frame x:Name="MainFrame" BackgroundColor="White" Margin="20" CornerRadius="10" HasShadow="false" HorizontalOptions="Center">
+                    <StackLayout>
+                        <ListView x:Name="MainList" 
+                          ItemsSource="{Binding Languages}" 
+                          HasUnevenRows="true">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <StackLayout Padding="8" Orientation="Horizontal">
+                                            <Label Text="{Binding Text}" VerticalTextAlignment="Center" HorizontalOptions="FillAndExpand"/>
+                                        </StackLayout>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                        <StackLayout Orientation="Horizontal" Spacing="16">
+                            <Button Text="Mark All" HorizontalOptions="FillAndExpand"/>
+                            <Button Text="Done" HorizontalOptions="FillAndExpand"/>
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+                <Frame x:Name="PopupFrame" IsVisible="false" CornerRadius="10" Margin="30" VerticalOptions="Center">
+                    <StackLayout Spacing="10">
+                        <!--<l:AnimationView x:Name="DoneAnimation" Animation="done.json" WidthRequest="150" HeightRequest="150" />-->
+                        <Label Text="You are all done!" HorizontalTextAlignment="Center"/>
+                        <Button Text="OK"/>
+                    </StackLayout>
+                </Frame>
+            </Grid>
+        </AbsoluteLayout>
+    </ScrollView>
+</pages:PopupPage>

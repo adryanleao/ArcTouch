@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                  xmlns:PageViews="clr-namespace:ArcTouch.Views;assembly=ArcTouch"
+                  x:Class="ArcTouch.Views.RootPage">
+
+    <MasterDetailPage.Master>
+        <PageViews:MenuPage Title="Default" 
+			         Icon="menu.png" 
+			         Padding="60"
+			         BackgroundColor="#64B5F6"/>
+    </MasterDetailPage.Master>
+</MasterDetailPage>

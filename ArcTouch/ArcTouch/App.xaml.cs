@@ -4,6 +4,8 @@ using ArcTouch.ViewModels;
 using ArcTouch.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Prism.Plugin.Popups;
+using ArcTouch.Views.PopUp;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace ArcTouch
@@ -22,14 +24,20 @@ namespace ArcTouch
         protected override async void OnInitialized()
         {
             InitializeComponent();
-
-            await NavigationService.NavigateAsync("NavigationPage/MainPage");
+            
+            string language = ArcTouch.Helpers.Settings.Language;
+            var url = $"/RootPage/NavigationPage/ListMoviePage?lang={language}";
+            await NavigationService.NavigateAsync(url);
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
             containerRegistry.RegisterForNavigation<NavigationPage>();
-            containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
+            containerRegistry.RegisterPopupNavigationService();
+            containerRegistry.RegisterForNavigation<RootPage>();
+            containerRegistry.RegisterForNavigation<MenuPage, MenuPageViewModel>();
+            containerRegistry.RegisterForNavigation<ListMoviePage, ListMoviePageViewModel>();
+            containerRegistry.RegisterForNavigation<LanguagePopUpPage, LanguagePopUpPageViewModel>();
         }
     }
 }
