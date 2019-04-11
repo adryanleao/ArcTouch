@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             xmlns:helper="clr-namespace:ArcTouch.Helpers;assembly=ArcTouch"
+             xmlns:commonViews="clr-namespace:ArcTouch.Views.Common;assembly=ArcTouch"
+             xmlns:templates="clr-namespace:ArcTouch.Views.Templates;assembly=ArcTouch"
+             xmlns:behavior="clr-namespace:Prism.Behaviors;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             BackgroundColor="#283441"
+             Title="Menu"
+             x:Class="ArcTouch.Views.MenuPage">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <helper:ItemCategoryTappedEventArgsConverter x:Key="ItemCategoryTappedEventArgsConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <Grid
+		VerticalOptions="FillAndExpand" 
+		Padding="0,20,0,10">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Grid
+			Grid.Row="0"
+			HorizontalOptions="Start" 
+			VerticalOptions="Start">
+
+            <!-- LOGO -->
+            <commonViews:Logo />
+
+        </Grid>
+
+        <ListView 
+            Margin="10"
+		    Grid.Row="1"
+			x:Name="sampleListView" 
+			ItemsSource="{ Binding Itens}"
+			SeparatorVisibility="Default"
+			VerticalOptions="FillAndExpand"
+            Header="{Binding}"
+            SeparatorColor="#253642">
+
+            <ListView.Behaviors>
+                <behavior:EventToCommandBehavior EventName="ItemTapped" 
+                                      Command="{Binding ItemTappedCommand}"
+                                      EventArgsConverter="{StaticResource ItemCategoryTappedEventArgsConverter}" />
+            </ListView.Behaviors>
+
+            <ListView.HeaderTemplate>
+                <DataTemplate>
+                    <Label Text="Categories" Style="{DynamicResource MainMenuHeaderStyle}" />
+                </DataTemplate>
+            </ListView.HeaderTemplate>
+
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <templates:MenuItemTemplate />
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</ContentPage>
