@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="ArcTouch.Views.MovieViewPage"
+             Title="Movie View">
+
+    <ScrollView x:Name="outerScrollView" BackgroundColor="White">
+
+        <Grid x:Name="layeringGrid" RowSpacing="0" VerticalOptions="FillAndExpand">
+            <Grid Padding="0" BackgroundColor="Black" >
+
+
+                <Image
+				Source="{Binding Img}"
+				Aspect="AspectFill"
+				Opacity=".7"/>
+            </Grid>
+
+            <StackLayout 
+				Spacing="0" 
+				Padding="0" 
+				VerticalOptions="FillAndExpand">
+
+                <StackLayout 
+					Padding="0"
+					Spacing="0"	
+					VerticalOptions="FillAndExpand">
+
+                    <StackLayout 
+						Padding="20" 
+						x:Name="headers" 
+						HeightRequest="260"
+						AnchorX="0">
+
+
+                        <Label
+							Text="{ Binding Name }"
+							LineBreakMode="WordWrap"
+							VerticalOptions="FillAndExpand"
+							TextColor="White"
+							FontSize="35"
+							FontAttributes="None"
+							VerticalTextAlignment="End"/>
+
+
+
+                    </StackLayout>
+
+                    <StackLayout 
+						Orientation="Horizontal" 
+						Padding="20" 
+						BackgroundColor="White">
+                        <Label 
+							Text="{ Binding Gen }" 
+							TextColor="#252525" 
+							HorizontalOptions="StartAndExpand" />
+                        <Label 
+							Text="{ Binding Date }" 
+							TextColor="#8c8c8c" 
+							HorizontalOptions="StartAndExpand" />
+                    </StackLayout>
+
+                    <BoxView Style="{ StaticResource Horizontal1ptLineStyle }" />
+
+                    <StackLayout Padding="20" BackgroundColor="White">
+
+                        <Label
+							Text="{ Binding Body }"
+							VerticalOptions="EndAndExpand"
+							TextColor="#8a8a8a" />
+                    </StackLayout>
+
+                    <BoxView Style="{ StaticResource Horizontal1ptLineStyle }" />
+
+                </StackLayout>
+
+            </StackLayout>
+        </Grid>
+
+    </ScrollView>
+
+</ContentPage>

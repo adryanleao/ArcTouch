@@ -1,4 +1,7 @@
-﻿using Xamarin.Forms;
+﻿using ArcTouch.Data;
+using ArcTouch.Data.Interfaces;
+using Refit;
+using Xamarin.Forms;
 
 namespace ArcTouch.Views
 {

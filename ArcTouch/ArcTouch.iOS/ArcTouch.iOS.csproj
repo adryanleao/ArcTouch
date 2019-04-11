@@ -206,8 +206,8 @@
     <PackageReference Include="Com.Airbnb.Xamarin.Forms.Lottie">
       <Version>2.7.1</Version>
     </PackageReference>
-    <PackageReference Include="Prism.Plugin.Popups">
-      <Version>2.2.0.293</Version>
+    <PackageReference Include="Refit">
+      <Version>4.6.99</Version>
     </PackageReference>
     <PackageReference Include="Xam.Plugins.Settings">
       <Version>3.1.1</Version>

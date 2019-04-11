@@ -1,9 +1,6 @@
-﻿<resources>
-  <color name="primary">#2196F3</color>
-  <color name="primaryDark">#1976D2</color>
-  <color name="white">#FFF</color>
-  <color name="black">#000</color>
-  <color name="accent">#FFC107</color>
-  <color name="window_background">#F5F5F5</color>
-  <drawable name="bg_color">#ffffff</drawable>
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+  <!-- Artina Exported Colors -->
+  <color name="AccentColor">#FFDA125F</color>
+  <color name="InverseTextColor">#FFFFFFFF</color>
 </resources>

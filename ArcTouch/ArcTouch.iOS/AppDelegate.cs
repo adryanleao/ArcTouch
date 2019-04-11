@@ -34,7 +34,6 @@ namespace ArcTouch.iOS
             }
             else
             {
-                global::Rg.Plugins.Popup.Popup.Init();
                 global::Xamarin.Forms.Forms.Init();
                 AnimationViewRenderer.Init();
                 LoadApplication(new App());

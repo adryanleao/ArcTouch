@@ -5,9 +5,6 @@
                   x:Class="ArcTouch.Views.RootPage">
 
     <MasterDetailPage.Master>
-        <PageViews:MenuPage Title="Default" 
-			         Icon="menu.png" 
-			         Padding="60"
-			         BackgroundColor="#64B5F6"/>
+        <PageViews:MenuPage/>
     </MasterDetailPage.Master>
 </MasterDetailPage>
