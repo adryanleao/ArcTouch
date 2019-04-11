@@ -17,13 +17,14 @@ Dependencias de terceiros:
 
 
 
-Solution xamarin.fomrs using partner MVVM
+* Solution xamarin.fomrs using partner MVVM
+
 Third-party dependencies:
 
-Lootie, for animations: https://www.nuget.org/packages/Com.Airbnb.Xamarin.Forms.Lottie/
+  * Lootie, for animations: https://www.nuget.org/packages/Com.Airbnb.Xamarin.Forms.Lottie/
 
-Prism for MVVM partner use: https://www.nuget.org/packages/Prism.Autofac.Forms
+  * Prism for MVVM partner use: https://www.nuget.org/packages/Prism.Autofac.Forms
 
-Xam.Plugins.Settings to store application settings: https://www.nuget.org/packages/Xam.Plugins.Settings
+  * Xam.Plugins.Settings to store application settings: https://www.nuget.org/packages/Xam.Plugins.Settings
 
-Refer to http requests api: https://www.nuget.org/packages/Refit
+  * Refer to http requests api: https://www.nuget.org/packages/Refit
